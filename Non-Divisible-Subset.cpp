@@ -3,7 +3,7 @@ int nonDivisibleSubset(int k, vector<int> s)
     int result = 0;
     std::map<int, int> mp;
 
-    for (auto n : s)
+    for (const auto &n : s)
     {
         mp[n % k]++;
     }
