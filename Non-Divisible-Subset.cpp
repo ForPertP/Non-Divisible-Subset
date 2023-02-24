@@ -69,3 +69,39 @@ int nonDivisibleSubset1(int k, vector<int> s)
 
     return result;
 }
+
+int main()
+{
+    ofstream fout(getenv("OUTPUT_PATH"));
+
+    string first_multiple_input_temp;
+    getline(cin, first_multiple_input_temp);
+
+    vector<string> first_multiple_input = split(rtrim(first_multiple_input_temp));
+
+    int n = stoi(first_multiple_input[0]);
+
+    int k = stoi(first_multiple_input[1]);
+
+    string s_temp_temp;
+    getline(cin, s_temp_temp);
+
+    vector<string> s_temp = split(rtrim(s_temp_temp));
+
+    vector<int> s(n);
+
+    for (int i = 0; i < n; i++) {
+        int s_item = stoi(s_temp[i]);
+
+        s[i] = s_item;
+    }
+
+    int result = nonDivisibleSubset(k, s);
+
+    fout << result << "\n";
+
+    fout.close();
+
+    return 0;
+}
+
